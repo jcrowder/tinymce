@@ -410,12 +410,14 @@ const EditorManager: EditorManager = {
           ' browsers please see: https://www.tinymce.com/docs/get-started/system-requirements/'
         );
         return [];
-      } else if (isQuirksMode) {
+      }
+
+      if (isQuirksMode) {
         ErrorReporter.initError(
-          'Failed to initialize the editor as the document is not in standards mode. ' +
+          'Warning Only Failed to initialize the editor as the document is not in standards mode. ' +
           'TinyMCE requires standards mode.'
         );
-        return [];
+        // return [];
       }
 
       if (settings.types) {
